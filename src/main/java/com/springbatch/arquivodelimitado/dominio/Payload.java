@@ -23,15 +23,6 @@ public class Payload {
 
     private Payload() {
     }
-
-    public String getCodOrigem() {
-        return codOrigem;
-    }
-
-    public String getNumLote() {
-        return numLote;
-    }
-
     public String getCodVenda() {
         return codVenda;
     }
@@ -40,44 +31,12 @@ public class Payload {
         return codEvento;
     }
 
-    public String getCodEmpresa() {
-        return codEmpresa;
-    }
-
     public String getCodIDLG() {
         return codIDLG;
     }
 
-    public String getDtaDocumento() {
-        return dtaDocumento;
-    }
-
-    public String getDtaLancamento() {
-        return dtaLancamento;
-    }
-
-    public String getCodRamo() {
-        return codRamo;
-    }
-
-    public String getNumEndosso() {
-        return numEndosso;
-    }
-
     public String getNumSinistro() {
         return numSinistro;
-    }
-
-    public String getNomCanalVenda() {
-        return nomCanalVenda;
-    }
-
-    public String getCodProduto() {
-        return codProduto;
-    }
-
-    public String getCodFonte() {
-        return codFonte;
     }
 
     public String getNumProposta() {
@@ -86,14 +45,6 @@ public class Payload {
 
     public String getNumCPFCNPJ() {
         return numCPFCNPJ;
-    }
-
-    public String getCodAtribuicao() {
-        return codAtribuicao;
-    }
-
-    public String getVlrSinistro() {
-        return vlrSinistro;
     }
 
     public static class Builder {
@@ -149,7 +100,7 @@ public class Payload {
         }
 
         public Builder codProduto(String numero) {
-            payload.codProduto = payload.codRamo = numero.contains("61014") ? "L0001403" : "L0001804";
+            payload.codProduto = numero.contains("61014") ? "L0001403" : "L0001804";
             return this;
         }
 

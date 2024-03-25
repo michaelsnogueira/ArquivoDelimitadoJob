@@ -100,6 +100,11 @@ public class SapGL {
             return sapgl;
         }
     }
+
+    public String getPublicId() {
+        return publicId;
+    }
+
     public static String mountInsertSAPGL(SapGL s) {
         return """
                 INSERT INTO IntegrationDataCenter.[dbo].[sapgl_log] ([EventID],[PublicId],[Payload],[ProposalNumber],[PolicyNumber],[ClaimNumber],[EndorsementNumber],[InstallmentNumber],[TaxID],[UpdateTime],[CreateTime],[Retired],[UpdateUser],[CreateUser],[MessageID],[GCSIDLG],[EvironName])

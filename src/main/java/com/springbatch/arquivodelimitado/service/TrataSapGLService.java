@@ -7,10 +7,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class TrataSapGLService {
-    public String trataSapGL(Payload payload) {
+    public SapGL trataSapGL(Payload payload) {
         String date = LocalDateTime.now().minusDays(1L).format(DateTimeFormatter.ISO_DATE);
 
-        SapGL build = new SapGL.Builder()
+        return new SapGL.Builder()
                 .eventID(payload.getCodEvento())
                 .publicId(payload.getCodIDLG())
                 .payload(Payload.mountPayload(payload).trim())
@@ -29,6 +29,5 @@ public class TrataSapGLService {
                 .gCSIDLG(payload.getCodIDLG())
                 .evironName("prod")
                 .build();
-        return SapGL.mountInsertSAPGL(build);
     }
 }
